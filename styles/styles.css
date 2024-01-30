@@ -1,0 +1,1436 @@
+:root{
+    --color: #111111;
+    --bg-color-purple: #66339975;
+    --bg-color-dark-soft: #333;
+    --color-gray: #808080;
+    --bg-color: #E5E5E5;
+    --bg-color-light: #E3E3E3;
+    --color-yellow: #f4a72d;
+    --color-yellow-2: #F1C50D;
+    --font-family: sans-serif;
+}
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+    margin: 0;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+/* ***************VERSION-MOBILE-375px************ */
+/* ***************HEADER************************** */
+/* MENU-LOGO */
+/* Estilos al boton */
+.off-canvas-btn{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    opacity: 0;
+}
+/* Estilos al label - rayita */
+.off-canvas-burger{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 998;
+    width: 3rem;
+    height: .6rem;
+    background-color: var(--color);
+    border-radius: .3rem;
+    transform: rotate(0deg) translate(0, 1.2rem);
+    transform-origin: top left;
+    transition: transform 0.5s ease, background-color 500ms ease;
+}
+/* Creando rayita 1 y 2 */
+.off-canvas-burger::before,
+.off-canvas-burger::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: .6rem;
+    background-color: var(--color);
+    border-radius: .3rem;
+    /* transition: transform 500ms ease, background-color 500ms ease; */
+    transition: transform 500ms ease;
+}
+/* Moviendo las rayitas 1 y 2 */
+.off-canvas-burger::before{
+    transform: rotate(0deg) translate(0, -0.9rem);
+}
+.off-canvas-burger::after{
+    transform: rotate(0deg) translate(0, .3rem);
+}
+/* Elimino la rayita del centro al momento de dar click para que no estorbe al forma la equis */
+.off-canvas-btn:checked + .off-canvas-burger{
+    background-color: transparent;
+}
+/* Roto la rayita de arriba */
+.off-canvas-btn:checked + .off-canvas-burger::before{
+    transform: rotate(45deg) translate(0,0);
+    /* background-color: var(--bg-color); */
+}
+/* Roto la rayita de abajo */
+.off-canvas-btn:checked + .off-canvas-burger::after{
+    transform: rotate(-45deg) translate(.4rem, -0.5rem);
+    /* background-color: var(--bg-color); */
+}
+/* Ahora vamos con los estilos del menu */
+.off-canvas-menu{
+    position: fixed;
+    background-color: var(--bg-color-dark-soft);
+    z-index: 997;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 500ms ease-in-out;
+    transform: translate(0, -100%);
+}
+/* Estilos al contenedor */
+.off-canvas-menu-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Estilos a los enlaces */
+.off-canvas-link{
+    border-bottom: thin solid var(--bg-color);
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #FFF;
+    transition: background-color 300ms ease;
+}
+.off-canvas-link:first-child{
+    border-top: thin solid var(--bg-color);
+}
+/* Color de fondo en el estado hover a los link */
+.off-canvas-link:hover{
+    background-color: var(--bg-color-purple);
+}
+/* Movimiento del menu - hacerlo aparecer al momento del checked */
+.off-canvas-btn:checked ~ .off-canvas-menu{
+    transform: translate(0, 0);
+}
+
+
+/* *********************
+************************ */
+/* HEADER-TITLE-TEXT-IMG */
+/* Estilos al contenedor principal*/
+.header__container-mobile{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color-purple);
+    height: 155vh;
+}
+
+/* Estilos al crculo de fondo. */
+.circle-bg{
+    width: 14.06rem;
+    height: 14.06rem;
+    background-color: var(--color-yellow-2);
+    border-radius: 50%;
+    top: 5.4rem;
+    left: -2rem;
+}
+/* Estilos a la linea decorativa */
+.hr{
+    height: .3rem;
+    width: 5rem;
+    top: 9.5rem;
+    left: 3rem;
+    border: none;
+    background-color: var(--color);
+}
+/* Estilos al contenedor del texto h1,p,a */
+.header__mobile-text{
+    top: 12rem;
+    padding: 0 4.8rem 0 3rem;
+}
+/* Estilos al title */
+.header__mobile-text h1{
+    font-size: 2rem;
+}
+/* Estilos al parrafo */
+.header__mobile-text p{
+    margin: 2rem 0 3rem 0;
+    font-weight: 600;
+    line-height: 1.3rem;
+}
+/* Estilos al boton */
+.header__mobile-text a{
+    color: var(--bg-color-light);
+    background-color: var(--color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+}
+/* Estilos al container de abajo. */
+.header__mobile-second{
+    margin-top: 35rem;
+}
+/* Estilos a la img principal */
+.hero-image{
+    background-image: url(/assets/images/ca7d9b89-371e-41dc-b141-619904a90bab.webp);
+    width: 15.6rem;
+    height: 15.6rem;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    margin: 3rem 0 0 4.5rem;
+    z-index: 10;
+}
+/* Estilos a la img de la sobra */
+.hero-image-shadow{
+    background-image: url(/assets/images/shadow.webp);
+    width: 15.6rem;
+    height: 15.6rem;
+    margin: 6.5rem 0 0 2rem;
+}
+/* Estilos a el rectangulo de fondo */
+.box__bg-header{
+    width: 14.06rem;
+    height: 26.56rem;
+    background-color: var(--bg-color-purple);
+    margin-left: 8rem;
+}
+
+
+/* ********************** */
+/* MAIN */
+/* SERVICIOS & ABOUT*/
+/* Hago flexible todo el contenedor de servicios y about, que en mobile estara en columna */
+.services__about{
+    display: flex;
+    flex-direction: column;
+}
+/* Hago flexible el contenedor de los servicios */
+.services{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+/* Trabajo en el contenedor de cada servicio. */
+.services article{
+    background-color: #FFF;
+    width: 19.3rem;
+    margin-bottom: 1.5rem;
+    padding: 2rem 2.5rem 2rem 1rem;
+    box-shadow: 5px 5px 10px 1px #2e2d2d75;
+}
+/* Logos de los servicios */
+.services img{
+    width: 4.6rem;
+}
+/* Titulos de los servicios */
+.services h3{
+    padding: 1rem 0;
+}
+/* Parrafos de los servicios */
+.services p{
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--color-gray);
+}
+/* La box del fondo. */
+.box-bg{
+    width: 21.25rem;
+    height: 22.5rem;
+    background-color: var(--color-yellow-2);
+    z-index: -10;
+    margin-top: 7rem;
+}
+
+/* **************************
+ABOUT 
+*****************************
+ */
+/* Hago flexible el contenedor about y lo ubico.*/
+.about{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 3rem 4rem 2.5rem;
+}
+/* Titulo h3 del about. */
+.about h3{
+    color: var(--color-gray);
+    margin-bottom: .6rem;
+}
+/* Titulo h2 del about. */
+.about h2{
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+/* Parrafo del about. */
+.about p{
+    line-height: 1.5;
+    margin: 0 1rem 2rem 0;
+}
+/* ancla del about. */
+.about a{
+    color: var(--bg-color-light);
+    background-color: var(--color);
+    width: 11rem;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/* ************** 
+    TALK TO US
+    **************
+*/
+/* Aplico el overflow hidden, por el circulo del bg que me creaba scroll horizontal */
+.talk-to-us{
+    overflow-x: hidden;
+}
+/* Circle bg */
+.talk-to-us__circle-bg{
+    width: 18.75rem;
+    height: 18.75rem;
+    background-color: var(--color-yellow-2);
+    border-radius: 50%;
+    left: 7rem;
+    z-index: -10;
+}
+/* Contenedor donde estan los textos y la img. */
+.talk-to-us__row{
+    margin: -12rem 3rem 2rem 2.5rem;
+}
+/* Contenedor de los textos */
+.talk-to-us article{
+    margin-bottom: 2rem;
+}
+/* Estilos al titulo de talk-to-us */
+.talk-to-us h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+/*  */
+.talk-to-us p{
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    margin: 0 1.5rem 2rem 0;
+}
+/* Estilos al llamado al call to action */
+.talk-to-us a{
+    color: var(--color);
+    text-decoration: underline;
+    text-decoration-thickness: 0.18rem;
+}
+/* Imagen de talk-to-us */
+.talk-to-us__image{
+    height: 45vh;
+    width: 45vh;
+    background-image: url(/assets/images/equilibrio-portatil-fondo-morado.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/* la box amarilla de fondo. */
+.talk-to-box-bg{
+    width: 6.2rem;
+    height: 10.9rem;
+    background-color: var(--color-yellow-2);
+    top: 219.3rem;
+    z-index: -10;
+}
+/* ************** 
+    PRICES
+    **************
+*/
+/* Margenes superiores e inferiores para el contenedor general */
+.prices__container{
+    margin: 3rem 0;
+}
+/* Estilos para el box bg */
+.prices-box-bg{
+    width: 100%;
+    height: 31.25rem;
+    background-color: var(--color-yellow-2);
+    z-index: -10;
+    top: 250rem;
+}
+/* Estilos para el titulo PRECIOS */
+.prices__container-title{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+/* Estilos para el contenedor de las cars */
+.prices{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+/* Estilos para cada tarjeta */
+.prices__card{
+    display: flex;
+    flex-direction: column;
+    width: 20.31rem;
+    height: 40rem;
+    box-shadow: .3rem .3rem .6rem .06rem #2e2d2d75;
+}
+/* Estilos para el titulo superior */
+.prices__card-title{
+    background-color: var(--color-yellow-2);
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+    line-height: 1.1;
+    font-size: 1.4rem;
+}
+/* Estilos para la parte de de la info de cada tajeta */
+.prices__card-items{
+    width: 100%;
+    height: 31rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    padding: 2rem 3rem;
+}
+/* Estilos para el precio. */
+.prices__card-items h2{
+    color: var(--color-yellow-2);
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+}
+/* Estilos para los parrafos */
+.prices__card-items p{
+    color: var(--color-gray);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+/* Estilos para el contenedor de la lista */
+.prices__card-items ul{
+    list-style-type:disc;
+    list-style-type:square;
+    margin-bottom: 1.5rem;
+}
+/* Estilo para cada item de las listas */
+.prices__card-items li{
+    color: var(--color-yellow-2);
+    margin: .7rem 0;
+}
+.prices__card-items span{
+    color: var(--bg-color-dark-soft);
+}
+/* Estilos para los botones */
+.prices__card-items a{
+    background-color: var(--color-yellow-2);
+    color: #FFF;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: .4rem;
+    margin-top: auto;
+    cursor: pointer;
+}
+.prices__card-items a:hover{
+    background-color: #FFF;
+    color: var(--color);
+}
+
+
+
+/* ********************* 
+    FORMULARIO
+********************* */
+
+
+/* Imagen. */
+.form__image{
+    background-image: url(/assets/images/image_form/11.jpg);
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(1);
+}
+/* Doy estilos generales al contenedor principal. */
+.container__form{
+    display: flex;
+    flex-direction: column;
+    width: 19.37rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin: -3rem auto 0 auto;
+    z-index: 10;
+    margin-bottom: 2rem;
+}
+/* Doy estilos al contenedor de los textos - la seccion encima del form */
+.form__text{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    padding: 2rem 1.5rem 0 1.5rem;
+}
+/* Estilos al titulo de los textos de la primera parte. */
+.form__text h2{
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+}
+/* Estilos a los parrafos de la primera parte. */
+.form__text-first p{
+    line-height: 1.5;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+/* Estilo a la linea horizontal que divide los textos */
+hr{
+    height: 0.18rem;
+    width: 16.56rem;
+    background-color: var(--color-gray);
+    margin: 1rem auto;
+}
+/* 2DA PARTE de los textos del formulario-text */
+/* Doy estilos al container del bloque que contiene address y phone. */
+.form__text-last{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 2rem 0;
+
+}
+/*Ancho de los iconos.  */
+.form__text img{
+    width: 1.56rem;
+}
+/* Hago flexible y coloco el fila los iconos respecto a los textos */
+.form__text-last article{
+    display: flex;
+    flex-direction: row;
+}
+/* Le doy espacio con margenes a los textos. */
+.text__last{
+    margin: 0 1.5rem 1.5rem 1rem;
+}
+/* Espacio inferior a los titulos */
+.text__last h3{
+    margin-bottom: .5rem;
+}
+/* Estilos a los textos. */
+.text__last p{
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* FORM *********** */
+/* Le doy al container general del formulario. */
+.form{
+    background-color: var(--bg-color-dark-soft);
+    color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+/* Estilos al titulo del formulario */
+.form h2{
+    padding: 0 3rem 0 2rem;
+    margin-bottom: 1rem;
+}
+/* Estilos a los divs que contienen labels e inputs */
+.form__field{
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+}
+/* Estilos comunes que comparten los inputs y la textarea */
+.form__field input,
+.form__field textarea{
+    width: 15.62rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: .3rem 0;
+    font-size: .9rem;
+}
+/* Estilos del boton. */
+.buttom{
+    width: 16.62rem;
+    padding: .8rem 0;
+    /* border-radius: .5rem; */
+    border: none;
+    background-color: var(--color-yellow);
+    color: var(--bg-color-light);
+    font-size: 1rem;
+}
+
+/* 
+********************* 
+    FOOTER
+*********************
+*/
+/* Estilos generales al footer */
+.footer{
+    background-color: var(--bg-color-dark-soft);
+    padding: 2rem 0;
+    text-align: center;
+}
+/* Estilos al texto de contacto */
+.footer__text{
+    display: flex;
+    flex-direction: column;
+}
+/* Estilos a las anclas */
+.footer__text a{
+    color: var(--bg-color);
+    margin-bottom: 1rem;
+}
+/* Estilos a los iconos */
+.footer__icons img{
+    width: 1.56rem;
+    margin: 1rem .5rem;
+}
+/* Cambio el color de los 2 primeros iconos. */
+.ig-white,
+.whats-white{
+    filter: invert(1);
+}
+
+/* ****************************************************************************576px-36em****************************************************************** */
+/* Small devices (landscape phones, 576px-36em and up) */
+@media screen and (min-width:36em){
+    /* HEADER ************ */
+    
+    /* Estilo al container general */
+    .header__container-mobile{
+        height: 185vh;
+    }
+    /* Aumento el tamanio del circle */
+    .circle-bg{
+        width: 17.5rem;
+        height: 17.5rem;
+        left: -3rem;
+    }
+    /* Modifico los estilos de la linea decorativa */
+    .hr{
+        height: .5rem;
+        width: 5.9rem;
+        top: 11rem;
+        left: 3.1rem;
+    }
+    /* Estilos del contenedor del texto */
+    .header__mobile-text{
+        top: 14rem;
+        padding: 0 11rem 0 3rem;
+    }
+    /* Estilos del titlo */
+    .header__mobile-text h1{
+        font-size: 3.1rem;
+    }
+    /* Estilo del container de la img, shadow y box */
+    .header__mobile-second{
+        margin-top: 42rem;
+    }
+    /* Estilos a la hero-image */
+    .hero-image,
+    .hero-image-shadow{
+        width: 25rem;
+        height: 25rem;
+        margin: 0 0 0 7rem;
+    }
+    /* Estilos de la sobra */
+    .hero-image-shadow{
+        margin: 5rem 0 0 2rem;
+    }
+    /* Estilo del rectangulo de bg */
+    .box__bg-header{
+        width: 21.8rem;
+        height: 35rem;
+        margin: -3rem 0 0 12rem;
+    }
+    
+    /* ********************** */
+    /* MAIN */
+    /* SERVICIOS & ABOUT*/
+    /* Aumento el ancho de la tarjeta y los padding internos. */
+    .services article{
+        width: 30rem;
+        padding: 2.5rem 3rem 2rem 3rem;
+    }
+    /* Ajusto la ubicacion de la box de fondo. */
+    .box-bg{
+        margin-top: 8rem;
+    }
+    /* ABOUT */
+    /* Hago flexible el contenedor about y lo ubico.*/
+    /* Ajusto el ancho del container. */
+    .about{
+        margin: 1.5rem 4rem 4rem 3.5rem;
+    }
+    /* Ajusto el tamano del about. */
+    .about h3{
+        font-size: 1.5rem;
+    }
+    /* Ajusto el tamano del titulo grande. */
+    .about h2{
+        font-size: 3rem;
+    }
+    /* ************** 
+    TALK TO US
+    **************
+    */
+    /* Ajusto tamano y ubicacion del circulo de fondo */
+    .talk-to-us__circle-bg{
+        width: 21.8rem;
+        height: 21.8rem;
+        left: 20rem;
+    }
+    /*  */
+    .talk-to-us__row{
+        margin-left: 4rem;
+        margin-right: 3.5rem;
+    }
+    /* Aumento el tamano del titulo */
+    .talk-to-us h2{
+        font-size: 3rem;
+    }
+    /* Aumento el tamanio de la img */
+    .talk-to-us__image{
+        height: 70vh;
+        width: 70vh;
+    }
+    /* Ajusto el tamano de la box de fondo. */
+    .talk-to-box-bg{
+        width: 12.5rem;
+        height: 16.6rem;
+        top: 220rem;
+    }
+    
+    /* ************** 
+          PRICES
+    *****************
+    */
+    /* Ajusto ancho del container de los precios */
+    .prices__card{
+        width: 26.56rem;
+    }
+    /* Ajusto padding del titulo de cada servicio */
+    .prices__card h3{
+        padding: 0 3rem;
+    }
+
+    /* 
+    ********************* 
+    FORMULARIO
+    *********************
+    */
+    /* Aumento del container en donde esta la parte 1 y 2 del formulario */
+    .container__form{
+        width: 28.12rem;
+    }
+    /* Doy estilos a la parte 1 del formilario */
+    .form__text{
+        padding: 2rem 1.8rem 0 1.8rem;
+    }
+    /* Ancho de la linea divisoria */
+    hr{
+        width: 24.68rem;
+    }
+    /* Estilos del ultimo texto de la parte 1 */
+    .form__text-last{
+        padding-left: 1rem;
+    }
+    
+    /* FORM *********** */
+    /* Aumento el ancho vertical del formulario */
+    .form{
+        padding: 3rem 0;
+    }
+    /* Ajusto el titulo */
+    .form h2{
+        padding: 0 3rem 0 3rem;
+    }
+    /* Aumento el ancho de los elementos internos del formulario */
+    .form__field input,
+    .form__field textarea,
+    .buttom{
+        width: 21.8rem;
+    }
+}
+
+/* ****************************************************************************768px-36em****************************************************************** */
+/* Medium devices (tablets, 768px-48em and up) */
+@media screen and  (min-width:48em){
+    /* HEADER */
+    /* Estilo al container general */
+    .header__container-mobile{
+        height: 186vh;
+    }
+
+    /* circulo bg */
+    .circle-bg{
+        width: 18.75rem;
+        height: 18.75rem;
+        left: -3rem;
+    }
+    /* linea decorativa */
+    .hr{
+        left: 6.6rem;
+    }
+    /* container general */
+    .header__container-mobile{
+        padding-left: 3.5rem;
+    }
+    /* Contenedor del h1,p y a */
+    .header__mobile-text{
+        padding-right: 18rem;
+    }
+    /* Contenedor de la img, shados y rectandulo */
+    .header__mobile-second{
+        margin: 42rem 0 0 6rem;
+    }
+    /* Estilo del rectangulo de bg */
+    .box__bg-header{
+        margin: -3rem 0 0 12rem;
+    }
+
+    /* ********************** */
+    /* MAIN */
+    /* SERVICIOS & ABOUT*/
+    /* Ajuste del tamanio de las tarjetas */
+    .services article{
+        width: 19rem;
+        height: 22rem;
+        margin: 0 1rem 1.5rem 1rem;
+    }
+    /* Ajusto la ubicacion de las tajetas de la derecha */
+    .right{
+        margin-top: 5rem;
+    }
+    /* Ajusto el box bg de fondo */
+    .box-bg{
+        width: 28.12rem;
+        height: 28.12rem;
+        margin-top: 12rem;
+    }
+    /* ABOUT */
+    /* Separo mas el container de los bordes */
+    .about{
+        margin: 1.5rem 4.5rem 4rem 4.5rem;
+    }
+
+    /* ************** 
+    TALK TO US
+    **************
+    */
+    /* Ajusto las dimensiones y la ubicacion del circulo de fondo. */
+    .talk-to-us__circle-bg{
+        width: 23.4rem;
+        height: 23.4rem;
+        left: 35rem;
+    }
+    /* Ajusto las dimensiones y la ubicacion de rectangulo de fondo */
+    .talk-to-box-bg{
+        height: 9.3rem;
+        width: 24rem;
+        top: 180rem;
+    }
+    /* Hago flexible y row el contenedor en donde encerre el texto y de la img */
+    /* Aumento tamanio del contenedor */
+    .talk-to-us{
+        height: 90vh;
+    }
+    .talk-to-us__row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.8rem;
+        margin: -14rem 0 0 0;
+    }
+    /* Le doy ancho al article donde estan los textos y lo ubico */
+    .talk-to-us__row article{
+        width: 17.18rem;
+    }
+    /* Tamanio y ubicacion de la img */
+    .talk-to-us__image{
+        width: 55vh;
+        height: 55vh;
+    }    
+    /* Ajusto el tamano del titulo. */
+    .talk-to-us h2{
+        font-size: 2rem;
+    }
+
+    /* ************** 
+    PRICES
+    **************
+    */
+    /* Ajusto tamano del titulo */
+    .prices__container-title{
+        font-size: 2rem;
+    }
+    /* Ajusto el ancho */
+    .prices__card{
+        width: 30rem;
+    }
+    /* Estilos para los parrafos */
+    .prices__card-items p{
+        padding: 0 3rem;
+    }
+
+    /* 
+    ********************* 
+        FORMULARIO
+    *********************
+    */
+    /* Ajusto el ancho del container y lo subo mas sobre la img*/
+    .container__form{
+        width: 34.37rem;
+        margin-top: -5rem;
+    }
+    /* Ajusto la ubicacion interna de la bg image */
+    .form__image{
+        background-position: bottom;
+    }
+    /* Ajusto los paddings internos del texto superior */
+    .form__text{
+        padding: 2rem 3rem 0 3rem;
+    }
+    /* Ajusto el ancho de la linea */
+    hr{
+        width: 28.12rem;
+    }
+    /* Ajusto el margen izquierdo del title. */
+    .form h2{
+        padding-left: 4rem;
+    }
+    /* Ajusto al ancho de los contenedores internos del form. */
+    .form__field input,
+    .form__field textarea,
+    .buttom{
+        width: 26.56rem;
+    }
+}
+
+
+
+/* ****************************************************************************992px-62em****************************************************************** */
+/* Large devices (desktops, 992px-62em and up) */
+@media screen and  (min-width:62em){
+    /* Ajusto la altura dek container */
+    .header__container-mobile{
+        height: 175vh;
+    }
+    /* Aumento el tamanio del circle */
+    .circle-bg{
+        width: 21rem;
+        height: 21rem;
+    }
+    /* Titulo ppal */
+    .header__mobile-text h1{
+        padding-right: 12rem;
+    }
+    /* Ajusto el tamanio del parrafo y ajusto el padding */
+    .header__mobile-text p{
+        font-size: 1.1rem;
+        padding-right: 14rem;
+    }
+    /* Ajusto tamanio del box de fondo */
+    .box__bg-header{
+        width: 23rem;
+        height: 37rem;
+        margin: -10rem 0 0 23rem;
+    }
+    /* Ajusto tamanio de la img y de la sombra */
+    .hero-image,
+    .hero-image-shadow{
+        width: 27rem;
+        height: 27rem;
+        margin: -6rem 0 0 16rem;
+    }
+    /* Ajusto la ubicacion de la sombra. */
+    .hero-image-shadow{
+        margin: -3rem 0 0 13rem;
+    }
+
+    /* ********************** */
+    /* MAIN */
+    /* SERVICIOS & ABOUT*/
+    /* Ajuste del tamanio de las tarjetas */
+    .services article{
+        width: 20.9rem;
+        height: 20.9rem;
+    }
+    /* Ajusto el box bg de fondo */
+    .box-bg{
+        width: 35rem;
+        height: 28.1rem;
+    }
+    /* ************** 
+    ABOUT
+    **************
+    */
+    /* Ajusto el ancho del container para aumentar espacios laterales */
+    .about{
+        margin: 1.5rem 11rem 4rem 8rem ;
+    }
+
+    /* ************** 
+    TALK TO US
+    **************
+    */
+    /* Aumento la altura del contenedor del texto y la img */
+    .talk-to-us{
+        height: 100vh;
+    }
+    /* Ajusto la ubicacion del circulo */
+    .talk-to-us__circle-bg{
+        width: 25rem;
+        height: 25rem;
+        left: 45rem;
+    }
+    /* Separo los textos de la img */
+    .talk-to-us__row{
+        gap: 3rem;
+    }
+    /* Aumento el tamanio de la img. */
+    .talk-to-us__image{
+        width: 65vh;
+        height: 65vh;
+    }
+    .talk-to-box-bg{
+        width: 29rem;
+        top: 174.7rem;
+    }
+
+    /* 
+    ********************* 
+        PRICES
+    *********************
+    */
+
+    /* Ajusto el ancho */
+    .prices__card{
+        width: 31.5rem;
+    }
+
+
+    /* 
+    ********************* 
+        FORMULARIO
+    *********************
+    */
+    /* Subo el contenedor general del form */
+    .container__form{
+        margin-top: -7rem;
+    }
+}
+
+
+/* ****************************************************************************1200px-75em****************************************************************** */
+/* Extra large devices (large desktops, 1200-75em and up) */
+@media screen and  (min-width:75em){
+    /* Cambio la direccion a fila y la altura del contenedor */
+    .header__container-mobile{
+        flex-direction: row;
+        height: 130vh;
+    }
+    /* Le doy un ancho al container del texto y lo muevo a la izquierda */
+    .header__mobile-first{
+        padding-left: 4rem;
+    }
+    /* Aumento el tamanio del circulo */
+    .circle-bg{
+        width: 23.43rem;
+        height: 23.43rem;
+    }
+    /* Ajusto la ubicacion de la linea */
+    .hr{
+        margin: 2.8rem 0 0 1rem;
+    }
+    /* Ajusto el ancho del contenedor del texto como tal y lo bajo con padding. */
+    .header__mobile-text{
+        margin: 2rem 32rem 0 0;
+        padding: 0;
+    }
+    /* Ajustes al parrado */
+    .header__mobile-first p{
+        padding: 0 4rem 0 0;
+        margin-right: 8rem;
+        line-height: 1.5;
+    }
+    /* Ajusto el tamano y la ubicacion de las img, sombre y boxbg */
+    .header__mobile-second{
+        margin: 6rem 0 0 25rem;
+    }
+    /* Ajusto tamanio de la hero-image y de la sombra */
+    .hero-image,
+    .hero-image-shadow{
+        width: 26.25rem;
+        height: 26.25rem;
+    }
+    /* Ajusto la ubicacion de la img */
+    .hero-image{
+        margin: 9rem 0 0 8rem;
+    }
+    /* Ajusto la ubicacion de la sombra */
+    .hero-image-shadow{
+        margin: 15rem 0 0 3rem;
+    }
+    /* Ajusto tamanio y ubicacion del rectangulo */
+    .box__bg-header{
+        width: 20.3rem;
+        height: 40.6rem;
+        margin: 4rem 0 0 15rem;
+    }
+
+    /* ************** 
+    MAIN - SERVICES / ABOUT
+    **************
+    */
+    /* Al container de services y about lo hago flexible y le cambio la direccion. */
+    .services__about{
+        display: flex;
+        flex-direction: row;
+    }
+    /* Al container de los servicios, le doy ancho y lo acerco mas al centro */
+    .services{
+        margin-left: 7rem;
+    }
+    /* Reduzco el ancho de las tarjetas de los servicios. */
+    .services article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 17.18rem;
+        padding: 0 2rem;
+    }
+    /* Ajusto el ancho del container de los textos de about y lo ubico. */
+    .about{
+        width: 18.7rem;
+        margin: 10rem 0 0 2rem;
+    }
+
+    /* ************** 
+    TALK-TO-US
+    **************
+    */
+    /* Aumento la altura del contenedor general */
+    .talk-to-us{
+        height: 110vh;
+    }
+    /* Ajusto la ubicacion del circle */
+    .talk-to-us__circle-bg{
+        left: 55rem;
+    }
+    /* Aumento el tamanio del titulo */
+    .talk-to-us__row h2{
+        font-size: 2.5rem;
+    }
+    /* Separo del borde izquierdo el contenedor. */
+    .talk-to-us__row{
+        gap: 7rem;
+    }
+    /* Elimino el margen del texto. */
+    .talk-to-us__row p{
+        margin: 0;
+    }
+    /* Aumento el ancho del rectangulo bg */
+    .talk-to-box-bg{
+        width: 43.7rem;
+        top: 131.5rem;
+    }
+    /* Ajusto el tamanio de la img */
+    .talk-to-us__image{
+        width: 75vh;
+        height: 75vh;
+    }
+
+    /* 
+    ************** 
+    OUR-PRICES
+    **************
+    */
+    /* Aumento la altura del container general. */
+    .prices__container{
+        height: 110vh;
+    }
+    /* Doy mas espacio al titulo top de cada card */
+    .prices__card-title{
+        padding: 0;
+    }
+    /* Reduzco en la horizontal los padding para dar mas espacio a los parrafos. */
+    .prices__card-items{
+        padding: 2rem 1rem;
+    }
+    /* Reduzco el ancho para que se coloquen en la horizontal las tarjetas */
+    .prices__card{
+        width: 22rem;
+    }
+    /* Ajusto tamanio y posicion del box de fondo */
+    .prices-box-bg{
+        height: 20rem;
+        top: 180rem;
+    }
+    
+    /* ************** 
+    FORM
+    **************
+    */
+    /* Ajusto el ancho del container general del formulario */
+    .container__form{
+        width: 40.65rem;
+        margin-top: -8rem;
+    }
+    /* Ajusto el ancho de la linea */
+    hr{
+        width: 34.3rem;
+    }
+    /* Bajo el texto */
+    .form__text{
+        padding-top: 3rem;
+    }
+    /* Aumento el padding del texto de abajo */
+    .form__text-last{
+        padding-left: 2rem;
+    }
+    /* Aumento el ancho de los elementos internos del formulario */
+    .form__field input,
+    .form__field textarea,
+    .buttom{
+        width: 29.6rem;
+    }
+}
+
+/* ****************************************************************************1440px-90em****************************************************************** */
+/* - Extra large devices (large desktops, 1440-90em and up) */
+@media (min-width:90em){
+    /* Muevo la rayita */
+    .hr{
+        margin-left: 2.5rem;
+    }
+    /* Muevo el container gral del header y aumento el alto*/
+    .header__container-mobile{
+        padding-left: 5rem;
+        gap: 10rem;
+        height: 115vh;
+    }
+    /* Cambio el posicionamiento del circulo */
+    .circle-bg{
+        left: 6rem;
+    }
+    .header__mobile-first h1{
+        padding-right: 25rem;
+    }
+    .header__mobile-first p{
+        padding-right: 10rem;
+    }
+
+    /* ********************** */
+    /* MAIN */
+    /* Muevo el container general del services y about. */
+    .services__about{
+        padding-left: 7rem;
+    }
+    /* Ajusto el ancho y muevo la box bg */
+    .box-bg{
+        width: 40.6rem;
+        margin-left: -7rem;
+    }
+
+    /* ************** 
+    TALK TO US
+    **************
+    */
+    /*  */
+    .talk-to-us{
+        height: 110vh;
+        margin-top: 5rem;
+    }
+    /*  */
+    .talk-to-us__row{
+        gap: 6rem;
+    }
+    /*  */
+    .talk-to-us__row article{
+        width: 325px;
+    }
+    /* Ajusto la ubicacion del circulo */
+    .talk-to-us__circle-bg{
+        width: 415px;
+        height: 415px;
+        left: 67rem;
+    }
+    /* Muevo el rectangulo bg */
+    .talk-to-box-bg{
+        width: 800px;
+        height: 165px;
+        top: 140.5rem;
+    }
+    /* Ajusto el tamanio de la img */
+    .talk-to-us__image{
+        width: 75vh;
+        height: 75vh;
+    }
+    /* 
+    ************** 
+    PRICES
+    **************
+    */
+    .prices-box-bg{
+        top: 190rem;
+    }
+}
+
+
+
+/* ****************************************************************************1600px-100em****************************************************************** */
+/* - Extra-Extra large devices (large desktops, 1600-100em and up) */
+@media (min-width:100em){
+    /* Muevo la rayita */
+    .hr{
+        margin-left: 3.6rem;
+    }
+    /* Muevo el circle*/
+    .circle-bg{
+        left: 8rem;
+    }
+    /* Muevo el container gral del header y aumento el alto*/
+    .header__container-mobile{
+        height: 130vh;
+        padding-left: 6rem;
+        gap: 13rem;
+    }
+    /*  */
+    .header__mobile-first h1{
+        padding-right: 30rem;
+    }
+    /* Aumento el tamanio del parrafo. */
+    .header__mobile-first p{
+        font-size: 1.2rem;
+        padding-right: 18rem;
+    }
+    /* Aumento tamanio de la img y la sombra */
+    .hero-image,
+    .hero-image-shadow{
+        width: 31.25rem;
+        height: 31.25rem;
+    }
+    /* Aumento tamanio del rectangulo bg */
+    .box__bg-header{
+        width: 26.5rem;
+        height: 46.8rem;
+    }
+    
+    
+    /* ********************** */
+    /* MAIN */
+    /* Muevo el container general del services y about. */
+    .services__about{
+        padding-left: 12rem;
+    }
+    /* Ajusto el ancho de las tarjetas */
+    .services article{
+        height: 23rem;
+    }
+    /* Ajusto el tamano de la fuente de los textos de servicios y about. */
+    .services p,
+    .about p{
+        font-size: 1.1rem;
+    }
+    /* Ajusto el ancho y muevo la box bg */
+    .box-bg{
+        width: 46.8rem;
+        margin-left: -12rem;
+    }
+
+    /* ************** 
+    TALK TO US
+    **************
+    */
+    /*  */
+    .talk-to-us{
+        height: 120vh;
+    }
+    /* Ajusto el tamanio de container de los textos */
+    .talk-to-us__row article{
+        width: 21.8rem;
+    }
+    /* Ajusto tamanio del titulo */
+    .talk-to-us__row h2{
+        font-size: 2.7rem;
+    }
+    /* Ajusto tamanio del parrafo */
+    .talk-to-us__row p{
+        font-size: 1.1rem;
+    }
+    /* Muevo el rectangulo bg */
+    .talk-to-box-bg{
+        width: 56.2rem;
+        height: 10.6rem;
+        top: 156rem;
+    }
+    /* Ajusto tamanio de la img */
+    .talk-to-us__image{
+        width: 80vh;
+        height: 80vh;
+    }
+    /* Ubicacion y tamanio del circulo */
+    .talk-to-us__circle-bg{
+        width: 450px;
+        height: 450px;
+        left: 73rem;
+    }
+
+    /* 
+    ************** 
+    PRICES
+    **************
+    */
+    .prices-box-bg{
+        top: 206rem;
+    }
+}
+
+/* 
+FALTA:
+- Detalle de la media query, no entiendo el porque cambian la posicion o la altura de los elementos.
+- Darle vida al formulario y crear una pagina de agadecimiento por llenar el mismo? 
+- Darle movilidad a la web, mejorar el efecto de los botones, y analizar en los prices darle un poco mas de fondo con algun efecto. Guia: https://sigma.la/ 
+- Ver que los enlaces redirijan al lugar correcto.
+
+*/
