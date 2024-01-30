@@ -1247,7 +1247,7 @@ hr{
     .header__container-mobile{
         padding-left: 5rem;
         gap: 10rem;
-        height: 115vh;
+        height: 130vh;
     }
     /* Cambio el posicionamiento del circulo */
     .circle-bg{
