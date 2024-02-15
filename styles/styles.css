@@ -264,6 +264,7 @@ a{
     transform: scale(1.05);
 }
 /* Logos de los servicios */
+.logo img,
 .services img{
     width: 4.6rem;
 }
@@ -644,41 +645,23 @@ hr{
     FOOTER
 *********************
 */
-/* Estilos generales al footer */
-.footer{
+/* Le doy estilos al footer container */
+footer{
     background-color: var(--bg-color-dark-soft);
-    padding: 2rem 0;
+    color: var(--bg-color-light);
     text-align: center;
 }
-/* Estilos al texto de contacto */
-.footer__text{
-    display: flex;
-    flex-direction: column;
+/* Le doy una altura con paddings verticales */
+footer p{
+    padding: 2rem 0;
 }
-/* Estilos a las anclas */
-.footer__text a{
-    color: var(--bg-color);
-    margin-bottom: 1rem;
-    transition: transform 25ms ease;
-}
-.footer__text a:hover{
+/* Estilos al ancla */
+.footer__link{
+    color: var(--color-yellow);
+    padding-left: .3rem;
     text-decoration: underline;
 }
-/* Estilos a los iconos */
-.footer__icons img{
-    width: 1.56rem;
-    margin: 1rem .5rem;
-    transition: transform 500ms ease;
-}
 
-.footer__icons img:hover{
-    transform: scale(1.5);
-}
-/* Cambio el color de los 2 primeros iconos. */
-.ig-white,
-.whats-white{
-    filter: invert(1);
-}
 
 /* ****************************************************************************576px-36em****************************************************************** */
 /* Small devices (landscape phones, 576px-36em and up) */
