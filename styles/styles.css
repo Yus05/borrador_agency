@@ -54,13 +54,17 @@ a{
     text-align: center;
     justify-content: start;
 }
+/* Quito del mobile el menu exclusivo para 992px en adelante */
+.menu-desktop{
+    display: none;
+}
 /* Estilos al contenedor del logo y el menu */
 .header__top{
     width: 100%;
     height: 15vh;
-    padding-left: .5rem;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 /* Estilos al logo */
@@ -73,6 +77,8 @@ a{
     background-position: center;
 }
 /* Estilos al menu para mobile */
+
+
 /* Estilos al boton */
 .off-canvas-btn{
     position: fixed;
@@ -138,7 +144,7 @@ a{
     align-items: center;
     text-align: center;
     transition: transform 500ms ease-in-out;
-    transform: translate(-90%, -115%);
+    transform: translate(0, -100%);
 }
 /* Estilos al contenedor */
 .off-canvas-menu-container{
@@ -167,14 +173,9 @@ a{
 /* Movimiento del menu - hacerlo aparecer al momento del checked */
 .off-canvas-btn:checked ~ .off-canvas-menu{
     transform: translate(0, 0);
-    transform: translate(-90%, -10%);
 }
-/* Quito del mobile el menu exclusivo para 992px en adelante */
-.menu-desktop{
-    display: none;
-}
-/* Estilos al contenedor del texto ppal del header, al h1 */
-.header__bottom{
+/* Estilos al contenedor del h1 */
+.header__bottom-title{
     width: 100%;
     height: 15vh;
     display: flex;
@@ -297,7 +298,7 @@ a{
 }
 /* Trabajo en el contenedor de cada servicio. */
 .services article{
-    background-color: #f9f9f9;
+    background-color: var(--color-white-gray);
     width: 19.3rem;
     margin-bottom: 1.5rem;
     padding: 2rem 2.5rem 2rem 1rem;
@@ -336,8 +337,6 @@ a{
     height: 140vh;
     background-color: var(--color-white-gray);
 }
-
-
 /* 
 ************** 
     PLANES
@@ -445,13 +444,9 @@ a{
 .card__best-seller{
     border: medium solid var(--color-rose);
 }
-
-
-
 /* ********************* 
     FORMULARIO
 ********************* */
-
 /* Imagen. */
 .form__image{
     background-image: url(/assets/images/11.webp);
@@ -560,8 +555,7 @@ hr{
     margin: .5rem 0;
 }
 /* Estilos comunes que comparten los inputs y la textarea */
-.form__field input,
-.form__field textarea{
+.form__field input{
     width: 15.62rem;
     padding: 1rem;
     border-radius: .5rem;
@@ -570,13 +564,12 @@ hr{
     margin: .3rem 0;
     font-size: .9rem;
 }
-.form__textarea{
-    resize: none;
-}
 /* Estilos del boton. */
 .buttom{
-    width: calc(26ch + 1ch * 2);
+    font-family: var(--font-family);
+    width: calc(22.5ch + 1ch * 2);
     padding: 1ch 0;
+    margin-top: .5rem;
     background-color:var(--color-rose);
     color: var(--bg-color-light);
     border: medium solid var(--color-rose);
@@ -685,7 +678,6 @@ hr{
     }
     /* Aumento el ancho de los elementos internos del formulario */
     .form__field input,
-    .form__field textarea,
     .buttom{
         width: 21.8rem;
     }
@@ -753,7 +745,6 @@ hr{
     }
     /* Ajusto al ancho de los contenedores internos del form. */
     .form__field input,
-    .form__field textarea,
     .buttom{
         width: 26.56rem;
     }
@@ -774,14 +765,12 @@ hr{
     }
     /* Estilos al contenedor del logo y del menu */
     .header__top{
-        background-color: var(--color-white-gray);
         background-color: var(--color-white-pure);
         width: 100%;
         height: 10vh;
         padding: 0 2rem;
         align-items: start;
         justify-content: space-between;
-
         position: sticky;
         top: 0;
         z-index: 999;
@@ -804,10 +793,10 @@ hr{
         color: var(--color);
     }
     /* Estilos al contenedor del h1 */
-    .header__bottom{
+    .header__bottom-title{
         height: 19.5vh;
     }
-    .header__bottom h1{
+    .header__bottom-title h1{
         font-size: 4rem;
     }
     /* Estilos de la hero-image */
@@ -862,7 +851,7 @@ hr{
 }
 
 /* ****************************************************************************1024px-64em****************************************************************** */
-/* Media Query para animaciones (desktops, 1024-64em and up) */
+/* Media Query SOLO para animaciones (desktops, 1024-64em and up) */
 @media screen and  (min-width:64em){
     /* animacion del menu de inicio */
     .menu-desktop a{
@@ -993,7 +982,7 @@ hr{
     .services{
         width: 45rem;
     }
-    /* EL RESTO DE LOS ELEMENTOS EN 992PX, QUEDAN IGUALES HASTA AHORA */
+    /* EL RESTO DE LOS ELEMENTOS EN 1200PX, QUEDAN IGUALES HASTA AHORA */
 }
 
 /* ****************************************************************************1440px-90em****************************************************************** */
@@ -1004,17 +993,17 @@ hr{
         height: 11vh;
     }
     .header__top-logo{
-        width: 12rem;
-        height: 6rem;
+        /* width: 12rem; */
+        /* height: 6rem; */
     }
     .menu-desktop ul{
         gap: 2rem;
     }
-    .header__bottom{
+    .header__bottom-title{
         width: 100%;
         height: 28vh;
     }
-    .header__bottom h1{
+    .header__bottom-title h1{
         font-size: 7rem;
         /* font-weight: 400; */
         letter-spacing: -.2rem;

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="blog, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/blog.css">
+    <title>Blog Marketing Digital</title>
+</head>
+<body>
+  <!-- OJO: Aqui se encuentra el div que contiene el menu de mobile, se ubico aqui porque al darle posicionamiento fijo, quiero que las coordenadas iniciales sean 0,0, no quiero colocarlo encima dentro del header porque queda debajo del menu para desktop, y el menu desktop debe ser obligao hijo del body para que pueda ser stiky.-->
+  <div class="menu-mobile">
+    <div class="menu__canvas"></div>
+    <input type="checkbox" class="off-canvas-btn">
+    <label class="off-canvas-burger"></label>
+    <nav class="off-canvas-menu">
+        <div class="off-canvas-menu-container">
+            <a href="#" class="off-canvas-link">Inicio</a>
+            <a href="#servicios" class="off-canvas-link">Servicios</a>
+            <a href="#proyectos" class="off-canvas-link">Proyectos</a>
+            <a href="#planes" class="off-canvas-link">Planes</a>
+            <a href="/blog.html" class="off-canvas-link">Blog</a>
+            <a href="#contact" class="off-canvas-link">Contacto</a>
+        </div>
+    </nav>
+  </div>
+    <!-- Este div contiene el menu, esta en por fuera del div header porque necesito que sea hijo directo del body para aplciar position sticky con respecto a toda la web -->
+    <div class="header__top">
+        <a href="#">
+            <div class="header__top-logo">
+            </div>
+        </a>
+        <div class="menu-desktop">
+            <ul>
+                <li><a href="/index.html" class="ancla-inicio">Inicio</a></li>
+                <li><a href="/index.html">Servicios</a></li>
+                <li><a href="/index.html">Proyectos</a></li>
+                <li><a href="/index.html">Planes</a></li>
+                <li><a href="/index.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+<!-- Aqui comenzamos con la imagen del header -->
+    <header class="header">
+        <div class="header__bottom relative">
+            <div class="header__bottom-cover absolute"></div>
+            <div class="header__bottom-title absolute">
+                <h1>EL BLOG <br>DE LA WEB</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Articulos -->
+        <div class="articles__container">
+            <article class="article">
+                <a href="/landing-page.html"><h2>¿Que es una Landing page?</h2></a>
+                <p>Una Landing Page, también conocida como página de aterrizaje, es un componente fundamental....</p>
+            </article>
+
+            <article class="article">
+                <a href="/responsive-web.html">
+                    <h2>¿Por qué mi página web debe ser responsive?</h2>
+                </a>
+                <p>En el diseño de una página web responsiva, la fluidez es fundamental...</p>
+            </article>
+
+            <article class="article">
+                <a href="/marketing-digital.html">
+                    <h2>Cómo Conquistar los Rankings de Google</h2>
+                </a>
+                <p>¿Quieres que tu página web se destaque en Google y atraiga más clientes?</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Hecho con</p>
+        <div class="footer__icon"></div>
+        <p> por<a class="footer__link" href="https://github.com/Yus05" target="_blank">Yus05</a></p>
+    </footer>
+</body>
+</html>

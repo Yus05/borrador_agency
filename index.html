@@ -3,49 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="¿Necesitas una página web? ¡En Pixel Studio Web, nuestra agencia de diseño web profesional, te brindamos soluciones a medida para crear tu página web y potenciar tu presencia en línea!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css">
-    <title>Document</title>
+    <title>Diseño de páginas web en Caracas</title>
 </head>
 <body>
+  <!-- OJO: Aqui se encuentra el div que contiene el menu de mobile, se ubico aqui porque al darle posicionamiento fijo, quiero que las coordenadas iniciales sean 0,0, no quiero colocarlo encima dentro del header porque queda debajo del menu para desktop, y el menu desktop debe ser obligao hijo del body para que pueda ser stiky.-->
+  <div class="menu-mobile">
+    <div class="menu__canvas"></div>
+    <input type="checkbox" class="off-canvas-btn">
+    <label class="off-canvas-burger"></label>
+    <nav class="off-canvas-menu">
+        <div class="off-canvas-menu-container">
+            <a href="#" class="off-canvas-link">Inicio</a>
+            <a href="#servicios" class="off-canvas-link">Servicios</a>
+            <a href="#proyectos" class="off-canvas-link">Proyectos</a>
+            <a href="#planes" class="off-canvas-link">Planes</a>
+            <a href="/blog.html" class="off-canvas-link">Blog</a>
+            <a href="#contact" class="off-canvas-link">Contacto</a>
+        </div>
+    </nav>
+  </div>
+    <!-- Este div contiene el menu, esta en por fuera del div header porque necesito que sea hijo directo del body para aplciar position sticky con respecto a toda la web -->
     <div class="header__top">
         <a href="#">
             <div class="header__top-logo">
             </div>
         </a>
-
         <div class="menu-desktop">
             <ul>
                 <li><a href="#" class="ancla-inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#planes">Planes</a></li>
+                <li><a href="/blog.html">Blog</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
-
-        <div class="menu-mobile">
-            <div class="menu__canvas"></div>
-            <input type="checkbox" class="off-canvas-btn">
-            <label class="off-canvas-burger"></label>
-            <nav class="off-canvas-menu">
-                <div class="off-canvas-menu-container">
-                    <a href="#inicio" class="off-canvas-link">Inicio</a>
-                    <a href="#servicios" class="off-canvas-link">Servicios</a>
-                    <a href="#proyectos" class="off-canvas-link">Proyectos</a>
-                    <a href="#planes" class="off-canvas-link">Planes</a>
-                    <a href="#contact" class="off-canvas-link">Contacto</a>
-                </div>
-            </nav>
-        </div>
-
-        
     </div>
-    <header>
-        <div class="header">
-            <article class="header__bottom">
+    
+<!-- Aqui empezamos con la seccion del header a partir de la hero-image. -->
+    <header class="header">
+        <div class="header__bottom">
+            <article class="header__bottom-title">
                 <h1>TU SITIO WEB <br> ¡COMIENZA AQUI!</h1>
             </article>
 
@@ -63,7 +67,7 @@
                         <h4>Maquetación Web</h4>
                     </div>
                     <div class="hero__image-text-boton">
-                        <a href="https://wa.link/vbsr5t">¡Comencemos!</a>
+                        <a href="https://wa.link/vbsr5t" target="_blank">¡Comencemos!</a>
                     </div>
                 </div>
             </div>
@@ -141,7 +145,7 @@
                     <h3>Landing Page</h3>
                     <p> Tú presencia online destacará.<br> <strong>¡Eleva tu marca hoy!</strong></p>
                     <div class="card__popular">
-                        <h2>$150</h2>
+                        <h2>$100</h2>
                         <p>MÁS POPULAR</p>
                     </div>
                     <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
@@ -158,7 +162,7 @@
                 <div class="card">
                     <h3>Web Corporativa</h3>
                     <p>Potencia tu presencia digital. <br><strong>¡Comienza a destacar en línea!</strong></p>
-                    <h2>$200</h2>
+                    <h2>$150</h2>
                     <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
                     <ul class="card__list">
                         <li class="card__list-items">Hasta 3 Páginas</li>
@@ -173,7 +177,7 @@
                 <div class="card">
                     <h3>Ecommerce</h3>
                     <p>Comienza a vender sin límites. <br><strong>¡Conéctanos para empezar!</strong></p>
-                    <h2>$350</h2>
+                    <h2>$250</h2>
                     
                     <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
                     <ul class="card__list">
@@ -223,23 +227,27 @@
                 </div>
             </div>
 
-            <form action="https://formsubmit.co/ysomaza@gmail.com" method="POST"  class="form">
-                <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
-                <input type="hidden" name="_captcha" value="false">
+            <form action="https://formsubmit.co/info@pixelstudioweb.agency" method="POST"  class="form">
+                
                 <h2 class="title">SOLICITA UN PRESUPUESTO GRATIS AHORA</h2>
                 <div class="form__field">
-                    <label for="name" class="form__label">Nombre</label>
-                    <input type="text" name="name" id="name" class="form__input" placeholder="Ingresa tu Nombre">
+                    <input type="text" name="name" class="form__input" placeholder="Ingresa tu Nombre" required>
                 </div>
                 <div class="form__field">
-                    <label for="email" class="form__label">Email</label>
-                    <input type="email" name="email" id="email" class="form__input" placeholder="Ingresa tu Email">
+                    <input type="email" name="email" class="form__input" placeholder="Ingresa tu Email" required>
                 </div>
                 <div class="form__field">
-                    <label for="text" class="form__label">Mensaje</label>
-                    <textarea name="text" id="text" cols="30" rows="10" placeholder="Ingresa tu Mensaje" required class="form__textarea"></textarea>
+                    <input type="text" name="company" placeholder="Empresa (Opcional)">
                 </div>
+                <div class="form__field">
+                    <input type="tel" name="phone" placeholder="Teléfono (Opcional)">
+                </div>
+
                 <input type="submit" name="submit" value="Enviar Solicitud" class="buttom">
+
+                <input type="hidden" name="_next" value="https://pixelstudioweb.agency/">
+
+                <input type="hidden" name="_captcha" value="false">
             </form>
         </div>
     </main>
@@ -249,7 +257,6 @@
         <p>Hecho con</p>
         <div class="footer__icon"></div>
         <p> por<a class="footer__link" href="https://github.com/Yus05" target="_blank">Yus05</a></p>
-        
     </footer>
 </body>
 </html>
