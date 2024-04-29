@@ -42,11 +42,14 @@ a{
     position: absolute;
 }
 
+
+/* VERSION MOBILE DESDE 375PX */
 /* Quito del mobile el menu exclusivo para 992px en adelante */
 .menu-desktop{
     display: none;
 }
-/* Estilos al contenedor del logo y el menu */
+
+/* Comienzan los estilos para la parte superior del header donde se encuentra el logo y el menu de mobile */
 .header__top{
     width: 100%;
     height: 15vh;
@@ -161,8 +164,8 @@ a{
     transform: translate(0,0);
 }
 
-/* ***************************** */
-/* header__botom */
+/* Comienzan los estilos para la parte del header donde esta la hero image */
+/* Estilos para la hero-image */
 .header__bottom{
     width: 95%;
     height: 40vh;
@@ -174,6 +177,7 @@ a{
     margin-right: auto;
     border-radius: 2rem;
 }
+/* Estilos para el cover rosa que cubre la hero-image */
 .header__bottom-cover{
     width: 100%;
     height: 100%;
@@ -183,6 +187,7 @@ a{
     border-radius: 2rem;
     opacity: .85;
 }
+/* Estilos para el contenedor del h1 */
 .header__bottom-title{
     width: 100%;
     height: 100%;
@@ -193,6 +198,7 @@ a{
     align-items: center;
     padding: 0 8rem 0 1rem;
 }
+/* Estilos para el h1 */
 h1{
     font-size: 4rem;
     font-weight: 400;
@@ -200,15 +206,11 @@ h1{
     line-height: .9;
 }
 
-/*  
-**************
-    MAIN
-**************
-*/
-/* 375PX */
+/* MAIN */
 /* Estructura gral de toda la pagina */
 main{
     width: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto);
@@ -227,21 +229,25 @@ main{
 */
 .ads{
     grid-area: ads;
-    width: 23.43rem;
-    height: auto;
+    /* width: 23.43rem; */
+    /* height: auto; */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
-/* Estilos para cada tarjeta */
+/*  */
+.ads > h2{
+  font-size: 2rem;
+}
+/* Estilos para la tarjeta */
 .card{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    width: 20.31rem;
-    height: 33rem;
+    /* width: 20.31rem; */
+    /* height: 33rem; */
     background-color: var(--color-white-gray);
     box-shadow: .3rem .3rem .6rem .06rem var(--color-shadow);
     border-radius: 1rem;
@@ -278,7 +284,7 @@ main{
     list-style: none;
     margin: .8rem 0;
 }
-/* Estilos a las vienietas de las listas. */
+/* Estilos a las vinetas de las listas. */
 .card__list-items::before{
     content: "";
     position: absolute;
@@ -309,11 +315,8 @@ main{
 .card__best-seller{
     border: medium solid var(--color-rose);
 }
-/* 
-********************* 
-    FOOTER
-*********************
-*/
+
+/* FOOTER */
 /* Le doy estilos al footer container */
 .footer{
     background-color: var(--bg-color-dark-soft);
@@ -340,12 +343,37 @@ main{
     filter: invert(1);
 }
 
-/* ******************576px ** */
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 576PX EN ADELANTE */
 /* Ajusto la fluidez interna del article a partir de 576px*/
 @media screen and  (min-width:36em){
-    
+  /* HEADER */
+  /* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
+  .header__bottom-title{
+    padding: 0 4rem 0 1rem;
+  }
+  h1{
+    font-size: 4.2rem;
+  }
+
+  /* MAIN */
+  /* Ajusto los padding para ajustar el margen del texto */
+  .article{
+    padding: 0 1.8rem 0 1.5rem;
+  }
 }
 
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 768PX EN ADELANTE */
+@media screen and (min-width: 48em){
+  /* Ajusto el padding del contenedor del header para bajar y juntar las palabras landing page */
+  .header__bottom-title{
+    padding: 0 10rem 0 1rem;
+  }
+}
+
+
+/* COMENZAMOS CON LA MEDIA QUUERY DE 992 EN ADELANTE */
 @media screen and  (min-width:62em){
     /* ELIMINO EL MENU DEL MOBILE */
     .menu-mobile{
@@ -384,15 +412,23 @@ main{
     .menu-desktop a{
         color: var(--color);
     }
+
+    /*  */
+    /* Ajusto el padding del contenedor del header para bajar y juntar las palabras landing page */
+    .header__bottom-title{
+    padding: 0 20rem 0 1rem;
+    }
+    /*  */
+    .article{
+      padding: 0 2.5rem;
+    }
 }
 
 
 
 
-
-/* Ajusto la fluidez interna del container gral */
-/* ******************************** */
-/* OJO, estoy con 1024px */
+/* COMENZAMOS CON LA MEDIA QUERY DE 1024 EN ADELANTE */
+/* Ajusto la fluidez interna del main cambiando la grid y agrego animaciones */
 @media screen and  (min-width:64em){
     /* animacion del menu de inicio */
     .menu-desktop a{
@@ -413,32 +449,60 @@ main{
         transform: scale(1);
     }
 
+    /*  */
+  /* Ajusto el padding del contenedor del header para bajar y juntar las palabras landing page */
+  .header__bottom-title{
+    padding: 0 20rem 0 3rem;
+    }
 
+    /* Aqui comienzo a cambiar la posicion de los elementos en la grid del main */
     main{
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-        grid-template-columns:repeat(2, auto);
-        grid-template-rows: auto;
-        grid-template-areas: 
+      width: 85%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      grid-template-columns:repeat(2, auto);
+      grid-template-rows: auto;
+      grid-template-areas: 
         "article ads";
-        gap: 1.5rem;
+      gap: 1.5rem;
     }
-    .ads{
-        border-left: 1px solid var(--color-gray);
-    }
-    /* Animaciones */
     
+    .ads{
+      position: sticky;
+    }
 }
 
 
+/* COMENZAMOS CON LA MEDIA QUERY DE 1220PX EN ADELANTE */
+@media screen and (min-width: 76.25em){
+  /* HEADER */
+  /* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
+  .header__bottom-title{
+    padding: 0 35rem 0 4rem;
+  }
+  h1{
+    font-size: 4.5rem;
+  }
+  
+}
 
 
+/* COMENZAMOS CON LA MEDIA QUERY DE 1440PX EN ADELANTE */
+@media screen and (min-width: 90em){
+  /* HEADER */
+  /* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
+  .header__bottom-title{
+    padding: 0 45rem 0 4rem;
+  }
+  /* Ajusto el tamano del main para centrar mas el contenido */
+  main{
+    width: 80%;
+  }
+}
 
 
-
-
-
-
-
-/* OJO PONER OTRA SECCION AL LADO DE LA IMG. DEBO LLENAR ESPACIOS. APLICAR GRID CSS EJM: https://www.iomarketing.es/blog/one-page/ */
+/* COMENZAMOS CON LA MEDIA QUERY DE 1600PX EN ADELANTE */
+@media screen and (min-width: 100em){
+  /* No agrego cambios */
+}
