@@ -208,7 +208,7 @@ h1{
 
 /* MAIN */
 /* Estructura gral de toda la pagina */
-main{
+.container{
     width: 100%;
     height: auto;
     display: grid;
@@ -387,7 +387,7 @@ main{
     .header__top{
         background-color: var(--color-white-pure);
         width: 100%;
-        height: 10vh;
+        height: 11vh;
         padding: 0 2rem;
         align-items: start;
         justify-content: space-between;
@@ -456,7 +456,7 @@ main{
     }
 
     /* Aqui comienzo a cambiar la posicion de los elementos en la grid del main */
-    main{
+    .container{
       width: 85%;
       height: auto;
       margin-left: auto;
@@ -467,12 +467,14 @@ main{
         "article ads";
       gap: 1.5rem;
     }
-    
-    .ads{
-      position: sticky;
-    }
-}
 
+    .ads{
+      height: 25rem;
+      position: sticky;
+      top: 4rem;
+    }
+    
+}
 
 /* COMENZAMOS CON LA MEDIA QUERY DE 1220PX EN ADELANTE */
 @media screen and (min-width: 76.25em){
@@ -494,10 +496,6 @@ main{
   /* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
   .header__bottom-title{
     padding: 0 45rem 0 4rem;
-  }
-  /* Ajusto el tamano del main para centrar mas el contenido */
-  main{
-    width: 80%;
   }
 }
 
