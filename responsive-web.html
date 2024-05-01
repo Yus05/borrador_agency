@@ -1,45 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/responsive-web.css">
-    <title>Responsive Web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="¿Que es una Landing Page? La clave de una Landing Page efectiva radica en su capacidad para guiar al usuario hacia una acción deseada de manera clara y persuasiva.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/responsive-web.css">
+  <title>Responsive Web</title>
 </head>
 <body>
-    <div>
-        <a href="/blog.html">Volver al Blog</a>
-        <a href="/index.html">Volver al Inicio</a>
-        <p>Una web bien diseñada debe ofrecer un contenido fluido y dinámico que se adapte automáticamente a diversos dispositivos y tamaños de pantalla, abarcando desde computadoras de escritorio y tablets hasta dispositivos móviles. Esta adaptabilidad garantiza una experiencia de usuario óptima en cualquier dispositivo, lo que resulta crucial en la era actual de la navegación web multiplataforma.</p>
+  <!-- OJO: Aqui se encuentra el div que contiene el menu de mobile, se ubico aqui porque al darle posicionamiento fijo, quiero que las coordenadas iniciales sean 0,0, no quiero colocarlo encima dentro del header porque queda debajo del menu para desktop, y el menu desktop debe ser obligao hijo del body para que pueda ser stiky.  -->
+  <div class="menu-mobile">
+    <div class="menu__canvas"></div>
+    <input type="checkbox" class="off-canvas-btn">
+    <label class="off-canvas-burger"></label>
+    <nav class="off-canvas-menu">
+        <div class="off-canvas-menu-container">
+            <a href="#" class="off-canvas-link">Inicio</a>
+            <a href="#servicios" class="off-canvas-link">Servicios</a>
+            <a href="#proyectos" class="off-canvas-link">Proyectos</a>
+            <a href="#planes" class="off-canvas-link">Planes</a>
+            <a href="/blog.html" class="off-canvas-link">Blog</a>
+            <a href="#contact" class="off-canvas-link">Contacto</a>
+        </div>
+    </nav>
+  </div>
+
+  <!-- Este div contiene el menu, esta en por fuera del div header porque necesito que sea hijo directo del body para aplciar position sticky con respecto a toda la web   -->
+  <div class="header__top">
+    <a href="#">
+        <div class="header__top-logo">
+        </div>
+    </a>
+    <div class="menu-desktop">
+        <ul>
+            <li><a href="/index.html" class="ancla-inicio">Inicio</a></li>
+            <li><a href="/index.html">Servicios</a></li>
+            <li><a href="/index.html">Proyectos</a></li>
+            <li><a href="/index.html">Planes</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/index.html">Contacto</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--  Aqui comenzamos con la imagen del header  -->
+<header class="header">
+  <div class="header__bottom relative">
+      <div class="header__bottom-cover absolute"></div>
+      <div class="header__bottom-title absolute">
+          <h1>¿Por qué mi página web debe ser responsive?</h1>
+      </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+
+
+
+    <!-- article -->
+    <div class="article">
+      <div class="article__parrafo">
+        <p>En el diseño de una página web responsiva, la fluidez es fundamental. Una web bien diseñada debe ofrecer un contenido fluido y dinámico que se adapte automáticamente a diversos dispositivos y tamaños de pantalla, abarcando desde computadoras de escritorio y tablets hasta dispositivos móviles. Esta adaptabilidad garantiza una experiencia de usuario óptima en cualquier dispositivo, lo que resulta crucial en la era actual de la navegación web multiplataforma.</p>
+      </div>
+      <div class="article__caracteristicas">
         <h3>Razones clave para tener una página web responsiva:</h3>
         <div>
-            <h4>1. Mejora la Experiencia del Usuario (UX):</h4>
-            Una página web responsiva proporciona una experiencia de usuario fluida y adaptable en cualquier dispositivo, ya sea móvil, tableta o computadora de escritorio. Esto garantiza que los visitantes puedan navegar fácilmente, consumir contenido y realizar acciones sin dificultades, lo que aumenta la satisfacción y la retención de usuarios.        
+          <h4>1. Mejora la Experiencia del Usuario (UX):</h4>
+          <p>Una página web responsiva proporciona una experiencia de usuario fluida y adaptable en cualquier dispositivo, ya sea móvil, tableta o computadora de escritorio. Esto garantiza que los visitantes puedan navegar fácilmente, consumir contenido y realizar acciones sin dificultades, lo que aumenta la satisfacción y la retención de usuarios.</p>
         </div>
         <div>
-            <h4>2. Optimización para Motores de Búsqueda (SEO):</h4>
-            <p>Los motores de búsqueda como Google prefieren y priorizan los sitios web responsivos en sus resultados de búsqueda, especialmente para búsquedas realizadas desde dispositivos móviles. Un diseño responsivo contribuye a una mejor clasificación en los resultados de búsqueda, lo que aumenta la visibilidad y el tráfico orgánico hacia tu sitio web.</p>
+          <h4>2. Optimización para Motores de Búsqueda (SEO):</h4>
+          <p>Los motores de búsqueda como Google prefieren y priorizan los sitios web responsivos en sus resultados de búsqueda, especialmente para búsquedas realizadas desde dispositivos móviles. Un diseño responsivo contribuye a una mejor clasificación en los resultados de búsqueda, lo que aumenta la visibilidad y el tráfico orgánico hacia tu sitio web.</p>
         </div>
         <div>
-            <h4>3. Reducción de la Tasa de Rebote:</h4>
-            <p>Las páginas web que no son responsivas tienden a tener una alta tasa de rebote, especialmente en dispositivos móviles, debido a una experiencia deficiente. Al ser responsiva, tu sitio web retendrá a más visitantes al ofrecer una experiencia de navegación satisfactoria y adaptada a cada dispositivo.</p>
+          <h4>3. Reducción de la Tasa de Rebote:</h4>
+          <p>Las páginas web que no son responsivas tienden a tener una alta tasa de rebote, especialmente en dispositivos móviles, debido a una experiencia deficiente. Al ser responsiva, tu sitio web retendrá a más visitantes al ofrecer una experiencia de navegación satisfactoria y adaptada a cada dispositivo.</p>
         </div>
         <div>
-            <h4>4. Aumento de las Conversiones:</h4>
-            <p>Una página web responsiva facilita que los usuarios realicen acciones importantes, como completar formularios, suscribirse o realizar compras, independientemente del dispositivo que utilicen. La facilidad de uso y la navegación sin problemas contribuyen a tasas de conversión más altas.</p>
+          <h4>4. Aumento de las Conversiones:</h4>
+          <p>Una página web responsiva facilita que los usuarios realicen acciones importantes, como completar formularios, suscribirse o realizar compras, independientemente del dispositivo que utilicen. La facilidad de uso y la navegación sin problemas contribuyen a tasas de conversión más altas.</p>
         </div>
         <div>
-            <h4>5. Simplifica el Mantenimiento y la Gestión:</h4>
-            <p>Con un diseño responsivo, solo necesitas mantener y actualizar una sola versión de tu sitio web, en lugar de múltiples versiones para diferentes dispositivos. Esto hace que el mantenimiento sea más eficiente y rentable a largo plazo.</p>
+          <h4>5. Simplifica el Mantenimiento y la Gestión:</h4>
+          <p>Con un diseño responsivo, solo necesitas mantener y actualizar una sola versión de tu sitio web, en lugar de múltiples versiones para diferentes dispositivos. Esto hace que el mantenimiento sea más eficiente y rentable a largo plazo.</p>
         </div>
         <div>
-            <h4>6. Adaptación al Comportamiento del Consumidor:</h4>
-            <p>En la era actual centrada en la movilidad, los consumidores esperan poder acceder a información y servicios en cualquier momento y lugar desde sus dispositivos móviles. Una página web responsiva te permite adaptarte a este comportamiento cambiante del consumidor y satisfacer sus necesidades de manera efectiva.</p>
+          <h4>6. Adaptación al Comportamiento del Consumidor:</h4>
+          <p>En la era actual centrada en la movilidad, los consumidores esperan poder acceder a información y servicios en cualquier momento y lugar desde sus dispositivos móviles. Una página web responsiva te permite adaptarte a este comportamiento cambiante del consumidor y satisfacer sus necesidades de manera efectiva.</p>
         </div>
         <div>
-            <h3>En conclusión,</h3>
-            <p>La responsividad de una página web es esencial para mejorar la experiencia del usuario, aumentar la visibilidad en motores de búsqueda, reducir la tasa de rebote, mejorar las conversiones y adaptarse al comportamiento del consumidor moderno. Es una inversión estratégica que puede tener un impacto significativo en el éxito y la efectividad de tu presencia en línea.</p>
+          <h3>En conclusión,</h3>
+          <p>La responsividad de una página web es esencial para mejorar la experiencia del usuario, aumentar la visibilidad en motores de búsqueda, reducir la tasa de rebote, mejorar las conversiones y adaptarse al comportamiento del consumidor moderno. Es una inversión estratégica que puede tener un impacto significativo en el éxito y la efectividad de tu presencia en línea.</p>
         </div>
+      </div>
     </div>
+
+
+
+
+
+
+    <!-- ads -->
+    <div class="ads">
+      <h2>Servicios Web</h2>
+      <div class="card card__best-seller">
+        <h3>Landing Page</h3>
+
+        <p> Tú presencia online destacará.<br> <strong>¡Eleva tu marca hoy!</strong></p>
+        <div class="card__popular">
+          <h2>$100</h2>
+          <p>MÁS POPULAR</p>
+        </div>
+        <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
+        <ul class="card__list">
+          <li class="card__list-items">Una Sóla Página</li>
+          <li class="card__list-items">Hasta 5 Secciones</li>
+          <li class="card__list-items">Carga de Contenido</li>
+          <li class="card__list-items">Contacto de Formulario</li>
+          <li class="card__list-items">Enlace a Redes Sociales</li>
+          <li class="card__list-items">Hosting y Dominio Básico</li>
+        </ul>
+      </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+  <p>Hecho con</p>
+  <div class="footer__icon"></div>
+  <p> por<a class="footer__link" href="https://github.com/Yus05" target="_blank">Yus05</a></p>
+</footer>
+
 </body>
 </html>

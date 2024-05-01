@@ -1,0 +1,506 @@
+:root{
+  --color: #111111;
+  --color-rose: #D85262;
+  --color-white-pure: #FFF;
+  --color-white-gray: #f9f9f9;
+  --color-shadow: #2e2d2d75;
+  --bg-color-dark-soft: #333;
+  --bg-color: #E5E5E5;
+  --bg-color-light: #E3E3E3;
+  --color-gray: #808080;
+  --font-family: Anta;    
+}
+html{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+  margin: 0;
+}
+body{
+  background-color: #FFF;
+  color: var(--color);
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
+
+
+/* VERSION MOBILE DESDE 375PX */
+/* Quito del mobile el menu exclusivo para 992px en adelante */
+.menu-desktop{
+  display: none;
+}
+
+/* Comienzan los estilos para la parte superior del header donde se encuentra el logo y el menu de mobile */
+.header__top{
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* Estilos al logo */
+.header__top-logo{
+  background-image: url(/assets/logo/STo.png);
+  width: 9rem;
+  height: 6rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+/* Estilos al menu para mobile */
+/* Estilos al boton */
+.off-canvas-btn{
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  opacity: 0;
+}
+/* Estilos al label - rayita */
+.off-canvas-burger{
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 998;
+  width: 3rem;
+  height: .6rem;
+  background-color: var(--color);
+  border-radius: .3rem;
+  transform: rotate(0deg) translate(0, 1.2rem);
+  transform-origin: top left;
+  transition: transform 0.5s ease, background-color 500ms ease;
+}
+/* Creando rayita 1 y 2 */
+.off-canvas-burger::before,
+.off-canvas-burger::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: .6rem;
+  background-color: var(--color);
+  border-radius: .3rem;
+  transition: transform 500ms ease;
+}
+/* Moviendo las rayitas 1 y 2 */
+.off-canvas-burger::before{
+  transform: rotate(0deg) translate(0, -0.9rem);
+}
+.off-canvas-burger::after{
+  transform: rotate(0deg) translate(0, .3rem);
+}
+/* Elimino la rayita del centro al momento de dar click para que no estorbe al forma la equis */
+.off-canvas-btn:checked + .off-canvas-burger{
+  background-color: transparent;
+}
+/* Roto la rayita de arriba */
+.off-canvas-btn:checked + .off-canvas-burger::before{
+  transform: rotate(45deg) translate(0,0);
+}
+/* Roto la rayita de abajo */
+.off-canvas-btn:checked + .off-canvas-burger::after{
+  transform: rotate(-45deg) translate(.4rem, -0.5rem);
+}
+/* Ahora vamos con los estilos del menu */
+.off-canvas-menu{
+  position: fixed;
+  background-color: var(--color);
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 500ms ease-in-out;
+  transform: translate(0, -100%);
+}
+/* Estilos al contenedor */
+.off-canvas-menu-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Estilos a los enlaces */
+.off-canvas-link{
+  border-bottom: thin solid var(--bg-color);
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--color-white-pure);
+  transition: background-color 300ms ease;
+}
+.off-canvas-link:first-child{
+  border-top: thin solid var(--bg-color);
+}
+/* Color de fondo en el estado hover a los link */
+.off-canvas-link:hover{
+  background-color: var(--color-rose);
+}
+/* Movimiento del menu - hacerlo aparecer al momento del checked */
+.off-canvas-btn:checked ~ .off-canvas-menu{
+  transform: translate(0,0);
+}
+
+/* Comienzan los estilos para la parte del header donde esta la hero image */
+/* Estilos para la hero-image */
+.header__bottom{
+  width: 95%;
+  height: 40vh;
+  background-image: url(/assets/images/pexels-cadomaestro-1170412.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
+}
+/* Estilos para el cover rosa que cubre la hero-image */
+.header__bottom-cover{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-rose);
+  border-radius: 2rem;
+  opacity: .85;
+}
+/* Estilos para el contenedor del h1 */
+.header__bottom-title{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 8rem 0 1rem;
+}
+/* Estilos para el h1 */
+h1{
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: -.08rem;
+  line-height: .9;
+}
+
+/* MAIN */
+/* Estructura gral de toda la pagina */
+.container{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 
+  "article"
+  "ads";
+  gap: 3rem;
+  margin: 2.5rem 0;
+  justify-content: center;
+}
+/* Ajusto el padding para centrar segun mis requerimientos el contenido */
+.article{
+  padding: 0 1rem 0 1.5rem;
+}
+/* **********CARD - ADS****
+*/
+.ads{
+  grid-area: ads;
+  /* width: 23.43rem; */
+  /* height: auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+/*  */
+.ads > h2{
+font-size: 2rem;
+}
+/* Estilos para la tarjeta */
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  /* width: 20.31rem; */
+  /* height: 33rem; */
+  background-color: var(--color-white-gray);
+  box-shadow: .3rem .3rem .6rem .06rem var(--color-shadow);
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+}
+/* Estilos internos a cada tarjeta */
+.card h3{
+  font-size: 2rem;
+}
+.card p{
+  color: var(--color-gray);
+}
+.card h2{
+  font-size: 3rem;
+}
+.card a{
+  position: relative;
+  display: inline-block;
+  color: var(--color-rose);
+  background-color: transparent;
+  border: medium solid var(--color-rose);
+  width: 15.625rem;
+  padding: .5rem 1rem;
+}
+/* Estilos al contendor ul */
+.card__list{
+  color: var(--color-gray);
+  padding: 0 2rem;
+  text-align: left;
+}
+/* Estilos a los items de la ul */
+.card__list-items{
+  position: relative;
+  list-style: none;
+  margin: .8rem 0;
+}
+/* Estilos a las vinetas de las listas. */
+.card__list-items::before{
+  content: "";
+  position: absolute;
+  background-image: url(/assets/icons/pixelated-svgrepo-com.svg);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  top: -.1rem;
+  left: -1.7rem;
+}
+/* Estilos al div que contiene el precio y el texto "mas popular" */
+.card__popular{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Estilos al texto "mas popular" */
+.card__popular p{
+  background-color: var(--color-rose);
+  color: var(--color-white-pure);
+  padding: .5ch 1ch;
+  border-radius: .5rem;
+}
+/* Estilos particulares a la mas a destacar */
+.card__best-seller{
+  border: medium solid var(--color-rose);
+}
+
+/* FOOTER */
+/* Le doy estilos al footer container */
+.footer{
+  background-color: var(--bg-color-dark-soft);
+  color: var(--bg-color-light);
+  text-align: center;
+  height: 5rem;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+/* Estilos al ancla */
+.footer__link{
+  color:var(--color-rose);
+  padding-left: .3rem;
+  text-decoration: underline;
+}
+/* Estilos a icon pixelado de corazon */
+.footer__icon{
+  background-image: url(/assets/icons/corazon.png);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: contain;
+  filter: invert(1);
+}
+
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 576PX EN ADELANTE */
+/* Ajusto la fluidez interna del article a partir de 576px*/
+@media screen and  (min-width:36em){
+/* HEADER */
+/* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
+.header__bottom-title{
+  padding: 0 4rem 0 1rem;
+}
+h1{
+  font-size: 4.2rem;
+}
+
+/* MAIN */
+/* Ajusto los padding para ajustar el margen del texto */
+.article{
+  padding: 0 1.8rem 0 1.5rem;
+}
+}
+
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 768PX EN ADELANTE */
+@media screen and (min-width: 48em){
+/* Ajusto el padding del contenedor del header para bajar y juntar las palabras landing page */
+.header__bottom-title{
+  padding: 0 10rem 0 1rem;
+}
+}
+
+
+/* COMENZAMOS CON LA MEDIA QUUERY DE 992 EN ADELANTE */
+@media screen and  (min-width:62em){
+  /* ELIMINO EL MENU DEL MOBILE */
+  .menu-mobile{
+      display: none;
+  }
+  /* Hago visible el menu para desktop */
+  .menu-desktop{
+      display: flex;
+  }
+  /* Estilos al contenedor del logo y del menu */
+  .header__top{
+      background-color: var(--color-white-pure);
+      width: 100%;
+      height: 11vh;
+      padding: 0 2rem;
+      align-items: start;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+  }
+  /* Estilos al logo */
+  .header__top-logo{
+      height: 5rem;
+  }
+  /* Estilos al contenedor del contenedor de las li de menu */
+  .menu-desktop ul{
+      height: 11vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+  }
+  /* Estilos a las anclas del menu */
+  .menu-desktop a{
+      color: var(--color);
+  }
+
+  /*  */
+  /* Ajusto el padding del contenedor del header para bajar y juntar las palabras landing page */
+  .header__bottom-title{
+  padding: 0 20rem 0 1rem;
+  }
+  /*  */
+  .article{
+    padding: 0 2.5rem;
+  }
+}
+
+
+
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 1024 EN ADELANTE */
+/* Ajusto la fluidez interna del main cambiando la grid y agrego animaciones */
+@media screen and  (min-width:64em){
+  /* animacion del menu de inicio */
+  .menu-desktop a{
+      position: relative;
+  }
+  .menu-desktop a::after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-rose);
+      transform: scale(0);
+      transition: transform .3s;
+  }
+  .menu-desktop a:hover::after{
+      transform: scale(1);
+  }
+
+  /*  */
+/* Ajusto el padding del contenedor del header para bajar y juntar las palabras landing page */
+.header__bottom-title{
+  padding: 0 20rem 0 3rem;
+  }
+
+  /* Aqui comienzo a cambiar la posicion de los elementos en la grid del main */
+  .container{
+    width: 85%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns:repeat(2, auto);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "article ads";
+    gap: 1.5rem;
+  }
+
+  .ads{
+    height: 25rem;
+    position: sticky;
+    top: 4rem;
+  }
+  
+}
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 1220PX EN ADELANTE */
+@media screen and (min-width: 76.25em){
+/* HEADER */
+/* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
+.header__bottom-title{
+  padding: 0 35rem 0 4rem;
+}
+h1{
+  font-size: 4.5rem;
+}
+
+}
+
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 1440PX EN ADELANTE */
+@media screen and (min-width: 90em){
+/* HEADER */
+/* Ajusto los padding del contenedor del title y el tamano de la fuente del h1 para darle mas espacio al title y que esten en una misma linea las palabras landing page */
+.header__bottom-title{
+  padding: 0 45rem 0 4rem;
+}
+}
+
+
+/* COMENZAMOS CON LA MEDIA QUERY DE 1600PX EN ADELANTE */
+@media screen and (min-width: 100em){
+/* No agrego cambios */
+}
