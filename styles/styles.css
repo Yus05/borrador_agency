@@ -383,14 +383,14 @@ a{
     padding: 2rem 2rem;
 }
 /* Estilos internos a cada tarjeta */
-.card h3{
-    font-size: 2rem;
+.planes__cards-title{
+  font-size: 2rem;
+}
+.card__prices-title{
+  font-size: 3rem;
 }
 .card p{
     color: var(--color-gray);
-}
-.card h2{
-    font-size: 3rem;
 }
 .card a{
     position: relative;
