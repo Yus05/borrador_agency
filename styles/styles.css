@@ -69,7 +69,7 @@ a{
 }
 /* Estilos al logo */
 .header__top-logo{
-    background-image: url(/assets/logo/STo.png);
+    background-image: url(/assets/logo/logo.png);
     width: 9rem;
     height: 6rem;
     background-repeat: no-repeat;
@@ -191,7 +191,7 @@ a{
 }
 /* Estilos a la imagen y a los texto que van en el costado inferior izquierdo */
 .hero__image{
-    background-image: url(/assets/images/pexels-cadomaestro-1170412.webp);
+    background-image: url(/assets/images/web-design__team1.webp);
     width: 95%;
     height: 68vh;
     background-repeat: no-repeat;
@@ -278,16 +278,16 @@ a{
 }
 /* Agrego los icons de los servicios y doy estilos comunes */
 .service-1__icon{
-    background-image: url(/assets/icons/icons_services-pixels/corazon.png);
+    background-image: url(/assets/icons/icons_services-pixels/icon__heart.png);
 }
 .service-2__icon{
-    background-image: url(/assets/icons/icons_services-pixels/gafas-de-sol.png);
+    background-image: url(/assets/icons/icons_services-pixels/icon__sunglasses.png);
 }
 .service-3__icon{
-    background-image: url(/assets/icons/icons_services-pixels/estrella.png);
+    background-image: url(/assets/icons/icons_services-pixels/icon__star.png);
 }
 .service-4__icon{
-    background-image: url(/assets/icons/icons_services-pixels/trueno.png);
+    background-image: url(/assets/icons/icons_services-pixels/icon__thunder.png);
 }
 .services__icon{
     width: 4rem;
@@ -417,7 +417,7 @@ a{
 .card__list-items::before{
     content: "";
     position: absolute;
-    background-image: url(/assets/icons/pixelated-svgrepo-com.svg);
+    background-image: url(/assets/icons/check__card-prices.svg);
     width: 1.5rem;
     height: 1.5rem;
     background-repeat: no-repeat;
@@ -449,7 +449,7 @@ a{
 ********************* */
 /* Imagen. */
 .form__image{
-    background-image: url(/assets/images/11.webp);
+    background-image: url(/assets/images/web-design__team2.webp);
     height: 60vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -602,7 +602,7 @@ hr{
 }
 /* Estilos a icon pixelado de corazon */
 .footer__icon{
-    background-image: url(/assets/icons/corazon.png);
+    background-image: url(/assets/icons/heart__pixel-footer.png);
     width: 1.5rem;
     height: 1.5rem;
     background-size: contain;
