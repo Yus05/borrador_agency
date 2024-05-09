@@ -334,21 +334,49 @@ a{
     display: flex;
     flex-direction: column;
     padding: 0 2rem;
-    height: 150vh;
+    height: auto;
 }
-.portfolio__text{
+.portfolio__title{
     width: 100%;
     height: 10vh;
-
+    height: auto;
 }
-.portfolio__text h2{
+.portfolio__title h2{
     font-size: 3rem;
     letter-spacing: -.08rem;
 }
-.portfolio__links{
-    width: 100%;
-    height: 140vh;
-    background-color: var(--color-white-gray);
+/*  */
+.portfolio__webs-container{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 0;
+  background-color: var(--color-white-gray);
+}
+/*  */
+.web{
+  width: 21.875rem;
+  width: 16rem;
+  height: 29.3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 1.5rem;
+  box-shadow: .3rem .3rem .6rem .06rem var(--color-shadow);
+}
+.portfolio__webs-furniture{
+  background-image: url(/assets/images/webs__portfolio/furniture__web.webp);
+}
+.portfolio__webs-nutritionist{
+  background-image: url(/assets/images/webs__portfolio/nutritionist__web.webp);
+}
+.portfolio__webs-minimalist{
+  background-image: url(/assets/images/webs__portfolio/minimalist__web.webp);
+}
+.portfolio__webs-appblue{
+  background-image: url(/assets/images/webs__portfolio/factory-app__web.webp);
 }
 /* 
 ************** 
@@ -865,6 +893,7 @@ hr{
     .portfolio{
         padding-top: 5rem;
     }
+    /* Estilos al contenedor ppal de los planes */
     .planes{
         padding-top: 5rem;
     }
