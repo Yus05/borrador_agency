@@ -336,16 +336,18 @@ a{
     padding: 0 2rem;
     height: auto;
 }
+/* Estilos al contenedor del title del portfolio */
 .portfolio__title{
     width: 100%;
     height: 10vh;
     height: auto;
 }
+/* Estilos al title */
 .portfolio__title h2{
     font-size: 3rem;
     letter-spacing: -.08rem;
 }
-/*  */
+/* Estilos al contenedor de las webs */
 .portfolio__webs-container{
   display: flex;
   flex-flow: row wrap;
@@ -355,7 +357,7 @@ a{
   padding: 3rem 0;
   background-color: var(--color-white-gray);
 }
-/*  */
+/* Estilos comunes a las img de las webs y a cada img en particular. */
 .web{
   width: 21.875rem;
   width: 16rem;
