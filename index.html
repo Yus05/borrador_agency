@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#ffffff">
     <title>Diseño de páginas web en Caracas</title>
 </head>
-<body>
+<body id="inicio">
   <!-- OJO: Aqui se encuentra el div que contiene el menu de mobile, se ubico aqui porque al darle posicionamiento fijo, quiero que las coordenadas iniciales sean 0,0, no quiero colocarlo encima dentro del header porque queda debajo del menu para desktop, y el menu desktop debe ser obligao hijo del body para que pueda ser stiky.-->
   <div class="menu-mobile">
     <div class="menu__canvas"></div>
@@ -37,7 +37,7 @@
     <label class="off-canvas-burger"></label>
     <nav class="off-canvas-menu">
         <div class="off-canvas-menu-container">
-            <a href="#" class="off-canvas-link">Inicio</a>
+            <a href="#inicio" class="off-canvas-link">Inicio</a>
             <a href="#servicios" class="off-canvas-link">Servicios</a>
             <a href="#proyectos" class="off-canvas-link">Proyectos</a>
             <a href="#planes" class="off-canvas-link">Planes</a>
@@ -47,14 +47,14 @@
     </nav>
   </div>
     <!-- Este div contiene el menu, esta en por fuera del div header porque necesito que sea hijo directo del body para aplciar position sticky con respecto a toda la web -->
-    <div class="header__top">
-        <a href="#">
+    <div class="header__top" id="inicio">
+        <a href="#inicio">
             <div class="header__top-logo">
             </div>
         </a>
         <div class="menu-desktop">
             <ul>
-                <li><a href="#" class="ancla-inicio">Inicio</a></li>
+                <li><a href="#inicio" class="ancla-inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#planes">Planes</a></li>
@@ -65,8 +65,8 @@
     </div>
     
 <!-- Aqui empezamos con la seccion del header a partir de la hero-image. -->
-    <header class="header">
-        <a href="https://wa.link/vbsr5t">
+    <header class="header" >
+            <a href="https://wa.link/vbsr5t" target="_blank">
           <div class="whatsapp__icon"></div>
         </a>
         <div class="header__bottom">
@@ -139,9 +139,8 @@
             </div>    
         </div>     
 
-        <!-- ***  -->
+        <!-- Portfolio  -->
         <div class="portfolio" id="proyectos">
-
             <div class="portfolio__title">
                 <h2>PORTAFOLIO:</h2>
             </div>
@@ -162,64 +161,85 @@
             </div>
         </div>
 
-        <!-- ***  -->
-        <!-- <p>Hacemos sitios web impactantes y personalizados. Diseñamos experiencias digitales modernas y responsivas para destacar tu compañía, negocio, marca, servicio o producto.</p> -->
-        <!-- ***  -->
-
-
-        
+        <!-- Planes -->
         <section class="planes" id="planes">
             <div class="planes__title">
                 <h2>Elige tu Plan Web Idea</h2>
             </div>
-
+            <!-- Contenedor de las 3 cards -->
             <div class="planes__cards">
-                <div class="card card__best-seller">
+                <!-- card 1 -->
+                <div class="card">
                     <h3 class="planes__cards-title">Landing Page</h3>
-                    <p> Tú presencia online destacará.<br> <strong>¡Eleva tu marca hoy!</strong></p>
-                    <div class="card__popular">
-                        <h3 class="card__prices-title">$100</h3>
-                        <p>MÁS POPULAR</p>
+                    <p class="planes__cards-text"> Tú presencia online destacará.<br> <strong>¡Eleva tu marca hoy!</strong></p>
+                    <div class="planes__prices">
+                      <div class="planes__prices-promo">
+                        <h3>$150</h3>
+                        <p class="planes__prices-promo-text">AHORRA 50%</p>
+                      </div>
+                      <!-- En el siguiente div mantengo los mismo estilos de la card popular para en caso de algun cambio, solo agrego el p de "mas popular" y la clase respectiva a la card y listo -->
+                      <div class="planes__prices-popular">
+                        <h3>75$</h3>
+                      </div>
                     </div>
                     <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
                     <ul class="card__list">
                         <li class="card__list-items">Una Sóla Página</li>
                         <li class="card__list-items">Hasta 5 Secciones</li>
                         <li class="card__list-items">Carga de Contenido</li>
-                        <li class="card__list-items">Contacto de Formulario</li>
+                        <li class="card__list-items">Formulario de Contacto</li>
                         <li class="card__list-items">Enlace a Redes Sociales</li>
-                        <li class="card__list-items">Hosting y Dominio Básico</li>
+                        <li class="card__list-items">Hosting Básico</li>
                     </ul>
                 </div>
 
-                <div class="card">
+                <!-- card 2 -->
+                <div class="card card__best-seller">
                     <h3 class="planes__cards-title">Web Corporativa</h3>
-                    <p>Potencia tu presencia digital. <br><strong>¡Comienza a destacar en línea!</strong></p>
-                    <h3 class="card__prices-title">$150</h3>
+                    <p class="planes__cards-text">Potencia tu presencia digital. <br><strong>¡Comienza a destacar en línea!</strong></p>
+                    <div class="planes__prices">
+                      <div class="planes__prices-promo">
+                        <h3>$200</h3>
+                        <p class="planes__prices-promo-text">AHORRA 50%</p>
+                      </div>
+                      <div class="planes__prices-popular">
+                        <h3>$100</h3>
+                        <p>MÁS POPULAR</p>
+                      </div>
+                    </div>
                     <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
                     <ul class="card__list">
                         <li class="card__list-items">Hasta 3 Páginas</li>
                         <li class="card__list-items">Hasta 5 Secciones</li>
                         <li class="card__list-items">Carga de Contenido</li>
-                        <li class="card__list-items">Contacto de Formulario</li>
+                        <li class="card__list-items">Formulario de Contacto</li>
                         <li class="card__list-items">Enlace a Redes Sociales</li>
-                        <li class="card__list-items">Hosting y Dominio Básico</li>
+                        <li class="card__list-items">Hosting Básico</li>
                     </ul>
                 </div>
 
+                <!-- card 3 -->
                 <div class="card">
                     <h3 class="planes__cards-title">Ecommerce</h3>
-                    <p>Comienza a vender sin límites. <br><strong>¡Conéctanos para empezar!</strong></p>
-                    <h3 class="card__prices-title">$250</h3>
-                    
+                    <p class="planes__cards-text">Comienza a vender sin límites. <br><strong>¡Conéctanos para empezar!</strong></p>
+                    <div class="planes__prices">
+                      <div class="planes__prices-promo">
+                        <h3 class="card__prices-title">$300</h3>
+                        <p class="planes__prices-promo-text">AHORRA 50%</p>
+                      </div>
+                      <!-- En el siguiente div mantengo los mismo estilos de la card popular para en caso de algun cambio, solo agrego el p de "mas popular" y la clase respectiva a la card y listo -->
+                      <div class="planes__prices-popular">
+                        <h3>$150</h3>
+                      </div>
+                    </div>
                     <a href="https://wa.link/vbsr5t" target="_blank">Comprar</a>
                     <ul class="card__list">
                         <li class="card__list-items">Hasta 8 Páginas</li>
                         <li class="card__list-items">Hasta 5 Secciones</li>
-                        <li class="card__list-items">Carga de Contenido</li>
-                        <li class="card__list-items">Contacto de Formulario</li>
+                        <li class="card__list-items">Carga de Hasta 15 Productos</li>
+                        <li class="card__list-items">Formulario de Contacto</li>
                         <li class="card__list-items">Enlace a Redes Sociales</li>
-                        <li class="card__list-items">Hosting y Dominio Básico</li>
+                        <li class="card__list-items">Hosting Básico</li>
                     </ul>
                 </div>
             </div>

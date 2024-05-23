@@ -144,7 +144,7 @@ a{
     align-items: center;
     text-align: center;
     transition: transform 500ms ease-in-out;
-    transform: translate(0, -100%);
+    transform: translate(0, -150%);
 }
 /* Estilos al contenedor */
 .off-canvas-menu-container{
@@ -365,8 +365,7 @@ a{
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border-radius: 1.5rem;
-  box-shadow: .3rem .3rem .6rem .06rem var(--color-shadow);
+  box-shadow: .3rem .3rem .9rem .06rem var(--color-shadow);
 }
 .portfolio__webs-furniture{
   background-image: url(/assets/images/webs__portfolio/furniture__web.webp);
@@ -378,7 +377,7 @@ a{
   background-image: url(/assets/images/webs__portfolio/minimalist__web.webp);
 }
 .portfolio__webs-appblue{
-  background-image: url(/assets/images/webs__portfolio/factory-app__web.webp);
+  background-image: url(/assets/images/webs__portfolio/factory__web.webp);
 }
 /* 
 ************** 
@@ -429,10 +428,47 @@ a{
 .planes__cards-title{
   font-size: 2rem;
 }
+.planes__prices{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+}
+.planes__prices-promo,
+.planes__prices-popular{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.planes__prices-promo h3{
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+.planes__prices-promo-text{
+  background-color: #D85262;
+  color: #FFF;
+  border-radius: 1.5rem;
+  padding: .1rem .3rem;
+}
+.planes__prices-popular h3{
+  font-size: 2.5rem;
+}
+.planes__prices-popular p{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
 .card__prices-title{
   font-size: 3rem;
+  font-size: 2rem;
+  text-decoration:line-through;
 }
-.card p{
+.planes__cards-text{
     color: var(--color-gray);
 }
 .card a{
@@ -474,16 +510,17 @@ a{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: .5rem;
 }
 /* Estilos al texto "mas popular" */
 .card__popular p{
-    background-color: var(--color-rose);
+    background-color: rgba(128, 128, 128, 0.521);
     color: var(--color-white-pure);
     padding: .5ch 1ch;
     border-radius: .5rem;
 }
-/* Estilos particulares a la mas a destacar */
+/* Estilos particulares al plan mas popular en ventas */
 .card__best-seller{
     border: medium solid var(--color-rose);
 }
@@ -904,6 +941,13 @@ hr{
 /* ****************************************************************************1024px-64em****************************************************************** */
 /* Media Query SOLO para animaciones (desktops, 1024-64em and up) */
 @media screen and  (min-width:64em){
+    /* Animacion del icono whatsapp */
+    .whatsapp__icon{
+      transition: transform .5s ease;
+    }
+    .whatsapp__icon:hover{
+      transform: scale(1.15);
+    }
     /* animacion del menu de inicio */
     .menu-desktop a{
         position: relative;
@@ -970,6 +1014,13 @@ hr{
     }
     .services article:hover{
         transform: scale(1.05);
+    }
+    /* Animaciones del porftolio */
+    .portfolio__webs-container a{
+      transition: transform .5s ease;
+    }
+    .portfolio__webs-container a:hover{
+      transform: scale(1.05);
     }
     /* Animacion de las cards */
     .card{
